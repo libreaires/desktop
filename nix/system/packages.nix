@@ -38,7 +38,6 @@
   # =====================
 
   environment.systemPackages = with pkgs; [
-    bazaar
 
     # niri
 
@@ -94,8 +93,4 @@
     renoise
     nix-sweep
   ];
-
-  # ===== Flatpak =====
-    services.flatpak.enable = true;
-  # ===================
 }

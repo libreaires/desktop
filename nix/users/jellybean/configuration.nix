@@ -47,6 +47,7 @@ in
     ../../modules/legacy.nix
     ../../modules/strainer.nix
     ../../desktops/kde.nix
+    ../../modules/flatpak.nix
   ];
   # ===== Users =====
     users.users."jellybean" = {
