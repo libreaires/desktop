@@ -4,61 +4,53 @@
 let
 
 # package arrays
-  vpn = with pkgs; [
+  TOOLS = with pkgs; [
     wireguard-tools
     proton-vpn
     proton-vpn-cli
   ];
 
-  development = with pkgs; [
+  DEVELOPMENT = with pkgs; [
     vscodium
     godot
+    surreal-engine
   ];
 
-  tools = with pkgs; [
+  CONTENT-CREATION = with pkgs; [
     obs-studio
   ];
 
-  music = with pkgs; [
+  MUSIC = with pkgs; [
     bitwig-studio
     bespokesynth
     renoise
   ];
 
-  art = with pkgs; [
+  ART = with pkgs; [
     povray
     libresprite
   ];
 
-  experiments = with pkgs; [
-    steam-tui
-    gtk-pipe-viewer
-    youtube-viewer
+  TERMINAL = with pkgs; [
     youtube-tui
-    yt-dlp
-    nimble
-    thunderbird
-    # minitube
-    smplayer
-    # experimental vvv
-    vitejs
-    redlib
-    surreal-engine
-  ];
-
-  terminal = with pkgs; [
-    ghostty
+    steam-tui
     hyfetch
   ];
 
-  languages = with pkgs; [
-    rustc
-    rustfmt
-    rubyPackages.sinatra
-    typescript-go
+  NIM-LANG = with pkgs; [
+    nimble
   ];
 
-  fonts = with pkgs; [
+  RUBY-LANG = with pkgs; [
+    rubyPackages.sinatra
+  ];
+
+  RUST-LANG = with pkgs; [
+    rustc
+    rustfmt
+  ];
+
+  FONTS = with pkgs; [
     nerd-fonts.noto
     nerd-fonts.jetbrains-mono
   ];
@@ -77,15 +69,16 @@ in
     stateVersion = "26.05";
 
     packages = lib.flatten [
-      vpn
-      development
-      music
-      languages
-      terminal
-      experiments
-      art
-      tools
-      fonts
+      TOOLS
+      DEVELOPMENT
+      MUSIC
+      NIM-LANG
+      RUBY-LANG
+      RUST-LANG
+      TERMINAL
+      ART
+      CONTENT-CREATION
+      FONTS
     ];
 
     file.".config/micro/plugins/micro-rust-plugin" = {

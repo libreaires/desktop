@@ -10,6 +10,4 @@
     "steam-unwrapped"
     "bitwig-studio6"
   ];
-
-  nixpkgs.config.allowBroken = true;
 }

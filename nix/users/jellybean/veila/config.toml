@@ -4,13 +4,13 @@ hide_cursor = true
 
 [background]
 type = "wallpaper"
-path = "$HOME/@nixos/nix/users/jellybean/veila/background/wallpaper.png"
+path = "/home/jellybean/@nixos/nix/users/jellybean/veila/background/wallpaper.png"
 fit = "fill"
 blur = 2
 
 [widgets]
-show_clock = true
-show_date = true
+show_clock = false
+show_date = false
 show_battery = true
 
 [auth]

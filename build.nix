@@ -4,20 +4,25 @@
 
   # imports
   imports = [
+
+    # hardware
     ./nix/hosts/current/generated.nix
     ./nix/hosts/current/configuration.nix
+
+    # system
     ./nix/system/boot.nix
     ./nix/system/audio.nix
+
+    # users
     ./nix/users/jellybean/configuration.nix
+
   ];
 
   # xdg
   xdg.portal = {
-
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-gtk ];
     config.common.default = "*";
-
   };
 
   # timezone
@@ -83,7 +88,6 @@
     clang
     cargo
     freshfetch
-    steam
     sgdboop
     steamcmd
     blender
@@ -96,6 +100,11 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-esr;
+  };
+
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
   };
 
   programs.steam = {

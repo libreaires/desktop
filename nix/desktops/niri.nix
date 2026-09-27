@@ -11,7 +11,10 @@
     swayidle
     ironbar
     elephant
+    lf
     awww
+    ghostty
+    nemo
     walker
     xwayland-satellite
   ];

@@ -1,2 +1,7 @@
 background-opacity = 0.8
-# background-blur = true
+window-padding-x = 8
+window-padding-y = 8
+mouse-hide-while-typing = true
+shell-integration-features = cursor,sudo,title
+font-size = 10
+font-family = "JetBrainsMono Nerd Font"

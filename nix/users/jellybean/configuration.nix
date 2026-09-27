@@ -13,18 +13,18 @@
     ../../modules/kotlin.nix
 
     # desktops
-    ../../desktops/kde.nix
     ../../desktops/niri.nix
 
   ];
 
   # user
   users.users."jellybean" = {
+
     isNormalUser = true;
     description = "libreaires";
     shell = pkgs.fish;
 
-    # user groups
+    # groups
     extraGroups = [
       "wheel"
       "networkmanager"
