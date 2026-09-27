@@ -31,17 +31,19 @@
 
   # aliases
   environment.shellAliases = {
-    generate-hardware = "export LC_ALL=C.UTF-8 && mkdir -p $HOME/@nixos/nix/hosts/current && sudo nixos-generate-config --dir /tmp/generated-config && sed -e '/^[[:space:]]*#/d' -e '/^[[:space:]]*$/d' /tmp/generated-config/hardware-configuration.nix > $HOME/@nixos/nix/hosts/current/generated.nix && sudo rm -rf /tmp/generated-config";
-    nixos-build = "sudo nixos-rebuild switch -I nixos-config=$HOME/@nixos/build.nix --show-trace";
-    home-update = "home-manager switch --flake $HOME/@nixos/#jellybean || HOME_MANAGER_CONFIG=$HOME/@nixos/nix/users/jellybean/home.nix home-manager switch";
-    nix-edit-build = "micro $HOME/@nixos/build.nix";
-    nix-edit-user = "micro $HOME/@nixos/nix/users/jellybean/configuration.nix";
-    nix-edit-home = "micro $HOME/@nixos/nix/users/jellybean/home.nix";
-    nix-edit-niri = "micro $HOME/@nixos/nix/desktops/niri.nix";
-    niri-mix-edit = "micro $HOME/@nixos/nix/users/jellybean/niri/config.kdl";
-    lock-mix-edit = "micro $HOME/@nixos/nix/users/jellybean/veila/config.toml";
-    bar-mix-edit = "micro $HOME/@nixos/nix/users/jellybean/ironbar/config.json";
-    prun-mix-auto = "bash $HOME/Tools/prun/start.sh";
+    gen-host-config = "export LC_ALL=C.UTF-8 && mkdir -p $HOME/@nixos/nix/hosts/current && sudo nixos-generate-config --dir /tmp/generated-config && sed -e '/^[[:space:]]*#/d' -e '/^[[:space:]]*$/d' /tmp/generated-config/hardware-configuration.nix > $HOME/@nixos/nix/hosts/current/generated.nix && sudo rm -rf /tmp/generated-config";
+    build-nixos = "sudo nixos-rebuild switch -I nixos-config=$HOME/@nixos/build.nix --show-trace";
+    build-home = "home-manager switch --flake $HOME/@nixos/#jellybean || HOME_MANAGER_CONFIG=$HOME/@nixos/nix/users/jellybean/home.nix home-manager switch";
+    edit-build-nix = "micro $HOME/@nixos/build.nix";
+    edit-user-nix = "micro $HOME/@nixos/nix/users/jellybean/configuration.nix";
+    edit-home-nix = "micro $HOME/@nixos/nix/users/jellybean/home.nix";
+    edit-niri-nix = "micro $HOME/@nixos/nix/desktops/niri.nix";
+    edit-niri-config = "micro $HOME/@nixos/nix/users/jellybean/niri/config.kdl";
+    edit-lock-config = "micro $HOME/@nixos/nix/users/jellybean/veila/config.toml";
+    edit-topbar-config = "micro $HOME/@nixos/nix/users/jellybean/ironbar/config.json";
+    prun-tool = "bash $HOME/Tools/prun/start.sh";
+    prun-flatpak = "flatpak uninstall --unused && flatpak uninstall --delete-data";
+    checkout-flatpak = "flatpak repair && flatpak --user repair";
   };
 
   # configuration

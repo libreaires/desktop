@@ -6,17 +6,36 @@
 
   # niri packages
   environment.systemPackages = with pkgs; [
+
+    # locker
     veila
+
+    # other
     mako
     swayidle
+
+    # top bar
     ironbar
-    elephant
+
+    # tui files
     lf
+
+    # wallpaper
     awww
+
+    # terminal
     ghostty
+
+    # gui files
     nemo
+
+    # switcher
     walker
+    elephant
+
+    # x11
     xwayland-satellite
+
   ];
 
   # systemd

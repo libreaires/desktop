@@ -55,6 +55,11 @@ let
     nerd-fonts.jetbrains-mono
   ];
 
+  ICONS = with pkgs; [
+    moka-icon-theme
+    hicolor-icon-theme
+  ];
+
 in
 {
   # imports
@@ -79,6 +84,7 @@ in
       ART
       CONTENT-CREATION
       FONTS
+      ICONS
     ];
 
     file.".config/micro/plugins/micro-rust-plugin" = {
@@ -130,6 +136,33 @@ in
     settings = {
       autosu = true;
       tabsize = 4;
+    };
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.catppuccin-cursors.mochaDark; 
+    name = "catppuccin-mocha-dark-cursors";
+    size = 24;
+    gtk.enable = true;
+  };
+
+  home.sessionVariables = {
+    XCURSOR_THEME = "catppuccin-mocha-dark-cursors";
+    XCURSOR_SIZE = "24";
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Moka";
+      package = pkgs.moka-icon-theme;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      icon-theme = "Moka";
     };
   };
 
