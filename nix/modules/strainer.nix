@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -10,4 +10,6 @@
     "steam-unwrapped"
     "bitwig-studio6"
   ];
+
+  nixpkgs.config.allowBroken = true;
 }

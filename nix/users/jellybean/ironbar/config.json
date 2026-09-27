@@ -1,0 +1,14 @@
+{
+  "position": "top",
+  "height": 40,
+  "start": [
+    { "type": "workspaces" }
+  ],
+  "center": [
+    { "type": "clock", "format": "%H:%M" }
+  ],
+  "end": [
+    { "type": "sys_info" },
+    { "type": "volume" }
+  ]
+}

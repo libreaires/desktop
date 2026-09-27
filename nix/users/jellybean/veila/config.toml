@@ -1,0 +1,18 @@
+[general]
+theme = "nord" 
+hide_cursor = true
+
+[background]
+type = "wallpaper"
+path = "$HOME/@nixos/nix/users/jellybean/veila/background/wallpaper.png"
+fit = "fill"
+blur = 2
+
+[widgets]
+show_clock = true
+show_date = true
+show_battery = true
+
+[auth]
+placeholder_text = "What's the secret?"
+timeout = 30

@@ -2,7 +2,5 @@
 
 {
   services.flatpak.enable = true;
-  environment.systemPackages = with pkgs; [
-    bazaar
-  ];
+  environment.systemPackages = with pkgs; [bazaar];
 }
