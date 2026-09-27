@@ -105,7 +105,7 @@ layout {
 
     shadow {
         on
-        draw-behind-window true
+        draw-behind-window false
         softness 25
         spread 5
         offset x=5 y=5
@@ -146,6 +146,16 @@ window-rule {
 	draw-border-with-background false
     geometry-corner-radius 0
     clip-to-geometry true
+}
+
+window-rule {
+    match app-id="^com\\.mitchellh\\.ghostty$"
+
+    background-effect {
+        blur true
+        noise 0.06
+        saturation 2
+    }
 }
 
 binds {
