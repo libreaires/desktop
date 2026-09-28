@@ -130,7 +130,7 @@ spawn-at-startup "veilad"
 spawn-at-startup "ironbar"
 spawn-at-startup "elephant"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "bash" "-c" "sleep 1 && awww img $HOME/@nixos/walls/images/jellybean/yumenikki01.png"
+spawn-at-startup "bash" "-c" "sleep 1 && awww img $HOME/@nixos/nix/users/jellybean/awww/current.png"
 
 hotkey-overlay {
     skip-at-startup

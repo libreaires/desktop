@@ -50,6 +50,10 @@ let
     rustfmt
   ];
 
+  CORN-SUPPORT = with pkgs; [
+    corn-cli
+  ];
+
   FONTS = with pkgs; [
     nerd-fonts.noto
     nerd-fonts.jetbrains-mono
@@ -85,6 +89,7 @@ in
       CONTENT-CREATION
       FONTS
       ICONS
+      CORN-SUPPORT
     ];
 
     file.".config/micro/plugins/micro-rust-plugin" = {
@@ -117,8 +122,8 @@ in
       source = ./veila/config.toml;
       force = true;
     };
-    configFile."ironbar/config.json" = {
-      source = ./ironbar/config.json;
+    configFile."ironbar/config.corn" = {
+      source = ./ironbar/config.corn;
       force = true;
     };
     configFile."ironbar/style.css" = {
