@@ -1,6 +1,7 @@
 {
   "position": "top",
-  "height": 30,
+  "height": 20,
+  "popup_autohide": true,
   "start": [
     { "type": "workspaces" }
   ],
@@ -9,6 +10,18 @@
   ],
   "end": [
     { "type": "sys_info" },
-    { "type": "volume" }
+    { "type": "volume" },
+    { "type": "sys_info" },
+    {
+      "type": "battery",
+      "format": "{percentage}%",
+      "profiles": {
+        "warning":  { "percent":  20 },
+        "critical": {
+          "when": { "percent":  5, "charging": false },
+          "format": "[LOW] {percentage}%"
+        }
+      }
+    }
   ]
 }

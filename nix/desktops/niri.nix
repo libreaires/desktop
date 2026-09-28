@@ -2,12 +2,18 @@
 
 {
   # programs
-  programs.niri.enable = true;
+  programs = {
+    niri.enable = true;
+  };
 
   # niri packages
   environment.systemPackages = with pkgs; [
 
+    # system
+    brightnessctl
+
     # locker
+    waylock
     veila
 
     # other
@@ -16,6 +22,7 @@
 
     # top bar
     ironbar
+    upower
 
     # tui files
     lf
@@ -62,6 +69,7 @@
     };
 
     dbus.enable = true;
+    upower.enable = true;
 
   };
 }
