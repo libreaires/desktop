@@ -67,6 +67,7 @@
     disktui
     ffmpeg
     vlc
+    chawan
     superfile
     pitivi
     glslang
@@ -98,11 +99,6 @@
     lockbook
     nix-sweep
   ];
-
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox-esr;
-  };
 
   programs.gamescope = {
     enable = true;

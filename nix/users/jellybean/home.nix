@@ -109,19 +109,50 @@ in
     };
   };
 
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-esr;
+    profiles.default = {
+
+      name = "Default";
+      isDefault = true;
+
+      settings = {
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
+
+      userChrome = '''';
+
+      userContent = ''
+        * {
+          font-family: monospace !important;
+            border-radius: 0px !important;
+            box-shadow: none !important;
+        }
+      '';
+
+    };
+  };
+
   # fonts
   fonts.fontconfig.enable = true;
 
   # configuration files
   xdg = {
+
+    # niri configuration file
     configFile."niri/config.kdl" = {
       source = ./niri/config.kdl;
       force = true;
     };
+
+    # locker configuration file
     configFile."veila/config.toml" = {
       source = ./veila/config.toml;
       force = true;
     };
+
+    # top bar configuration and css files
     configFile."ironbar/config.corn" = {
       source = ./ironbar/config.corn;
       force = true;
@@ -130,8 +161,20 @@ in
       source = ./ironbar/style.css;
       force = true;
     };
+
+    # terminal configuration files
     configFile."ghostty/config.ghostty" = {
       source = ./ghostty/config.ghostty;
+      force = true;
+    };
+
+    # app launcher configuration file
+    configFile."walker/config.toml" = {
+      source = ./walker/config.toml;
+      force = true;
+    };
+    configFile."walker/themes/jellybean/style.css" = {
+      source = ./walker/themes/jellybean/style.css;
       force = true;
     };
   };
@@ -159,14 +202,32 @@ in
 
   gtk = {
     enable = true;
+
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "lavender" ];
+        variant = "mocha";
+      };
+    };
+
     iconTheme = {
       name = "Moka";
       package = pkgs.moka-icon-theme;
     };
   };
 
+  systemd.user.sessionVariables = config.home.sessionVariables;
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk3";
+  };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Catppuccin-Mocha-Standard-Lavender-Dark";
       icon-theme = "Moka";
     };
   };
