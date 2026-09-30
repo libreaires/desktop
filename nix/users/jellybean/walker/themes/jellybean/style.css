@@ -55,12 +55,12 @@ scrollbar {
 }
 
 .input selection {
-  background: lighter(lighter(lighter(@window_bg_color)));
+  background: #00000000;
 }
 
 .input {
   caret-color: @theme_fg_color;
-  background: lighter(@window_bg_color);
+  background: #00000000;
   padding: 10px;
   color: @theme_fg_color;
 }

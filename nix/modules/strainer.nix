@@ -9,5 +9,6 @@
     "renoise"
     "steam-unwrapped"
     "bitwig-studio6"
+    "davinci-resolve"
   ];
 }

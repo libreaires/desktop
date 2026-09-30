@@ -41,7 +41,7 @@ anchor_right = true
 "default" = { input = "Find", list = "Nothing here..." }
 
 [keybinds]
-close = ["BackSpace"]
+close = ["Escape", "ctrl BackSpace"]
 next = ["Down"]
 previous = ["Up"]
 left = ["Left"]

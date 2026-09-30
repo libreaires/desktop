@@ -66,6 +66,13 @@
     distrobox
     disktui
     ffmpeg
+    cmatrix
+    fortune
+    espeak
+    libzip
+    banner
+    cowsay
+    asciiquarium-transparent
     vlc
     chawan
     superfile

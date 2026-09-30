@@ -18,6 +18,7 @@ let
 
   CONTENT-CREATION = with pkgs; [
     obs-studio
+    # davinci-resolve
   ];
 
   MUSIC = with pkgs; [
@@ -64,6 +65,10 @@ let
     hicolor-icon-theme
   ];
 
+  PETS = with pkgs; [
+    wayneko
+  ];
+
 in
 {
   # imports
@@ -90,6 +95,7 @@ in
       FONTS
       ICONS
       CORN-SUPPORT
+      PETS
     ];
 
     file.".config/micro/plugins/micro-rust-plugin" = {
@@ -165,6 +171,20 @@ in
     # terminal configuration files
     configFile."ghostty/config.ghostty" = {
       source = ./ghostty/config.ghostty;
+      force = true;
+    };
+    configFile."ghostty/shaders/smear.glsl" = {
+      source = ./ghostty/shaders/smear.glsl;
+      force = true;
+    };
+    configFile."ghostty/shaders/letter.glsl" = {
+      source = ./ghostty/shaders/letter.glsl;
+      force = true;
+    };
+
+    # notification configuration files
+    configFile."mako/config" = {
+      source = ./mako/config;
       force = true;
     };
 

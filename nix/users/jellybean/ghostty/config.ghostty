@@ -5,3 +5,7 @@ mouse-hide-while-typing = true
 shell-integration-features = cursor,sudo,title
 font-size = 10
 font-family = "JetBrainsMono Nerd Font"
+confirm-close-surface = false
+cursor-style-blink = true
+custom-shader = shaders/smear.glsl
+custom-shader = shaders/letter.glsl
