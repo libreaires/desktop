@@ -1,0 +1,30 @@
+
+  # packages
+  LOCKER = pkgs.veila;
+  NOTIFICATION = pkgs.mako;
+  TERMINAL = pkgs.ghostty;
+  WALLPAPER = pkgs.awww;
+
+  # package arrays
+  SYSTEM = with pkgs; [
+    brightnessctl
+  ];
+
+  BAR = with pkgs; [
+    ironbar
+    upower
+  ];
+
+  TOOLS = with pkgs; [
+    lf
+    nemo
+  ];
+
+  LAUNCHER = with pkgs; [
+    walker
+    elephant
+  ];
+
+  # nix files
+  GREETER = ../modules/greetd.nix;
+  LEGACY = ../modules/legacy.nix;

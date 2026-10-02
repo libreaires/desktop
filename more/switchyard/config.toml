@@ -1,9 +1,0 @@
-prompt_on_click = true
-favorite_browser = 'io.gitlab.librewolf-community.desktop'
-hidden_browsers = []
-check_default_browser = true
-show_app_names = true
-force_dark_mode = true
-stay_alive = true
-remove_tracking_parameters = true
-rules = []
