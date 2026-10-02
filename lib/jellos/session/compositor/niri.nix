@@ -13,7 +13,7 @@ let
   off = false;
   on = true;
 
-  # configuration
+  # configuration nest
   cfg = config.${libName}.${setName}.${sessionName};
 
 # block of code
