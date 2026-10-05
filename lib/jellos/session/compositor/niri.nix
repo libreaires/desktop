@@ -3,6 +3,8 @@
 # block of variables
 let
 
+  # add (on global session) a legacy option
+
   # set atributes
   libName = "jellos";
   setName = "session";

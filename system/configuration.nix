@@ -1,4 +1,12 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+
+# variable block
+let
+
+  # strings
+  configurator = "mixer";
+  configuratorName = "Configurator";
+{
 
   imports = [
 
@@ -56,6 +64,15 @@
         value = "90";
       }
     ];
+  };
+
+  # configurator
+  users = {
+    users.configurator = {
+      isNormalUser = true;
+      description = configuratorName;
+      home = "/${configurator}";
+    };
   };
 
   # xdg
