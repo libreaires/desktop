@@ -4,22 +4,21 @@
 let
 
   # set atributes
-  libName = "jellos";
+  libName = "snowball";
   setName = "profile";
+  currentVersion = "26.05";
 
   # values
-  emptyArray = [];
+  emptyList = [];
   off = false;
   on = true;
 
   # string arrays
-  defaultGroups = [
-    "wheel"
-    "networkmanager"
-  ];
+  defaultGroups = [ "wheel" "networkmanager" ];
 
   # strings
-  configurator = "jellyfish";
+  configurator = "snowman";
+  configuratorName = "Olaf";
 
   # configuration nest
   cfg = config.${libName}.${setName};
@@ -27,22 +26,6 @@ let
 # block of code
 in {
 
-  # imports
-  imports = [
-
-    # modules
-    ../../modules/musnix/configuration.nix
-    ../../modules/strainer.nix
-    ../../modules/flatpak.nix
-    ../../modules/python.nix
-    ../../modules/kotlin.nix
-
-    # desktops
-    ../../desktops/niri.nix
-
-  ];
-  
-  # create the options
   options.${libName}.${setName} = {
 
     # username option
@@ -62,54 +45,61 @@ in {
     # groups option
     groups = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = emptyArray;
+      default = emptyList;
       description = "Add groups to a ${setName}.";
     };
 
     # packages option
     packages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
-      default = emptyArray;
+      default = emptyList;
       description = "Add packages to the ${setName}'s session.";
     };
 
-    strainer = lib.mkOption {
-      type = lib.types.bool;
-      default = off;
-      description = "Allow a curated collection of unfree packages to the ${setName}.";
+    strainer = {
+
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = off;
+        description = "Allow a curated collection of unfree packages to the ${setName}.";
+      };
+
+      extraPackages = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = emptyList;
+        description = "Add more unfree packages to the ${setName}";
+      };
+;
     };
 
     experimental = lib.mkOption {
       type = lib.types.bool;
       default = off;
-      description = "Set ${setName} as experimental.";
+      description = "Set this ${setName} as a experimental ${setName}.";
+    };
+
+    shell = lib.mkOption {
+      type = lib.types.package;
+      default = pkgs.fish;
+      description = "Set a custom shell for the ${setName}.";
     };
 
   };
 
   # set the configuration
-  config = lib.mkIf cfg.enable {
+  config = {
 
     users = {
-      users.cfg.username = {
+      users.${cfg.username} = {
 
         isNormalUser = true;
         description = cfg.name;
-        shell = pkgs.fish;
+        shell = cfg.shell;
         extraGroups = defaultGroups + cfg.groups;
 
       };
-
     };
 
-    nixpkgs = {
-
-      config = {
-        allowBroken = cfg.experimental;
-      };
-
-    };
-
-  };
+  }; # vei parece rostinhos vdd oh
 
 }
